@@ -1,7 +1,15 @@
-import { Text } from "react-native";
+import { Button, Text } from "react-native";
+import { useDispatch } from "react-redux";
+import { checkLogin } from "../redux/Account/account.actions";
 
 const Profile = () => {
-  return <Text>Device Page</Text>;
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(checkLogin());
+  };
+
+  return <Button title="Hello" onPress={handleClick} />;
 };
 
 export default Profile;
